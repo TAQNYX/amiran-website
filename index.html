@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metadaten -->
+    <title>Amiran Gebäudereinigung | Mörfelden-Walldorf & Rhein-Main</title>
+    <meta name="description" content="Ihre professionelle Gebäudereinigung in Mörfelden-Walldorf und der Rhein-Main-Region. Spezialisiert auf Unterhaltsreinigung, Glasreinigung, Grundreinigung und Gebäudeservice.">
+    <meta name="keywords" content="Gebäudereinigung, Unterhaltsreinigung, Fensterreinigung, Glasreinigung, Mörfelden-Walldorf, Rhein-Main, Facility Services, Grundreinigung, Büroreinigung, Amiran">
+    <meta name="author" content="Amiran Gebäudereinigung">
+    
+    <!-- Favicon (Das Logo im Browser-Tab) -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    
+    <!-- FontAwesome für moderne Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --amiran-blau: #1E3A8A; /* Königsblau */
+            --amiran-beige: #F3EFE6; /* Beige */
+            --amiran-grau: #374151;  /* Grau */
+            --amiran-hover: #172554;
+            --taqnyx-tuerkis: #2FD8A4; /* TAQNYX Corporate Color */
+            --bg-white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--amiran-grau);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 45px;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--amiran-grau);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--amiran-blau);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--amiran-beige);
+            padding: 100px 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+        }
+
+        .hero h1 {
+            color: var(--amiran-blau);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin-bottom: 2.5rem;
+            color: var(--amiran-grau);
+        }
+
+        .btn-primary {
+            background-color: var(--amiran-blau);
+            color: var(--bg-white);
+            padding: 16px 36px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--amiran-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(30, 58, 138, 0.3);
+            color: var(--bg-white);
+        }
+
+        /* --- Globale Sektionen --- */
+        section.content-section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--amiran-blau);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Leistungen (Bilder-Grid 2x2) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Erzwingt 2 Kacheln nebeneinander */
+            gap: 50px; /* Extra Whitespace für den cleanen Look */
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(55, 65, 81, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 250px; /* Etwas höhere Bilder für die 2x2 Ansicht */
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        .service-content h3 {
+            color: var(--amiran-blau);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr; /* Auf Handys untereinander */
+                gap: 30px;
+            }
+        }
+
+        /* --- Warum Wir (Icon-Grid) --- */
+        .features-wrapper {
+            background-color: var(--amiran-beige);
+            padding: 100px 5%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            background: var(--bg-white);
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--amiran-blau);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            color: var(--amiran-blau);
+            margin-bottom: 15px;
+        }
+
+        /* --- Kontaktformular --- */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(55, 65, 81, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(55, 65, 81, 0.2);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--amiran-grau);
+            background-color: #fafafa;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--amiran-blau);
+            background-color: var(--bg-white);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--amiran-grau);
+            color: var(--amiran-beige);
+            padding: 60px 5% 30px;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .footer-grid h3 {
+            color: var(--bg-white);
+            margin-bottom: 20px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-grid ul li i {
+            margin-right: 15px;
+            margin-top: 5px;
+            color: var(--amiran-beige);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-grid a {
+            color: var(--amiran-beige);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-grid a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .taqnyx-link {
+            color: var(--taqnyx-tuerkis);
+            font-weight: bold;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .taqnyx-link:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+            .footer-grid { text-align: center; }
+            .footer-grid ul li { justify-content: center; text-align: center; }
+            .footer-grid ul li i { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.svg" alt="Amiran Gebäudereinigung Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Startseite</a></li>
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#warum-wir">Warum Amiran?</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Banner -->
+    <section class="hero">
+        <h1>Strahlende Sauberkeit.<br>Kompromisslos zuverlässig.</h1>
+        <p>Ihr professioneller Partner für Gebäudereinigung und Facility Services in Mörfelden-Walldorf und der Rhein-Main-Region.<br><br>Ein sauberes Umfeld ist die Visitenkarte Ihres Unternehmens und die Grundlage für das Wohlbefinden Ihrer Mitarbeiter. Wir kümmern uns um die Details, damit Sie sich auf Ihr Kerngeschäft konzentrieren können – mit modernster Technik, umweltschonenden Verfahren und einem Team, auf das Sie sich verlassen können.</p>
+        <a href="#kontakt" class="btn-primary">Unverbindliches Angebot anfordern</a>
+    </section>
+
+    <!-- Leistungen (Das neue 2x2 Layout mit Whitespace) -->
+    <section id="leistungen" class="content-section">
+        <div class="section-header">
+            <h2>Unsere Leistungen</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <!-- Platzhalter Bild 1 -->
+                <img src="https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Unterhaltsreinigung">
+                <div class="service-content">
+                    <h3>Unterhaltsreinigung</h3>
+                    <p>Die regelmäßige und diskrete Reinigung Ihrer Büro-, Praxis- oder Geschäftsräume. Wir sorgen für ein makelloses Arbeitsumfeld und langfristigen Werterhalt.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <!-- Platzhalter Bild 2 -->
+                <img src="https://images.pexels.com/photos/6195120/pexels-photo-6195120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Glas- und Fassadenreinigung">
+                <div class="service-content">
+                    <h3>Glas- & Fassadenreinigung</h3>
+                    <p>Der erste Eindruck zählt. Wir sorgen für streifenfreie Fenster, saubere Glasfronten und repräsentative Fassaden. Auch schwer zugängliche Bereiche reinigen wir sicher.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <!-- Platzhalter Bild 3 -->
+                <img src="https://images.pexels.com/photos/4098580/pexels-photo-4098580.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Grund- und Sonderreinigung">
+                <div class="service-content">
+                    <h3>Grund- & Sonderreinigung</h3>
+                    <p>Wenn die normale Reinigung nicht ausreicht. Ob intensive Reinigung stark beanspruchter Böden oder Baureinigung nach Renovierungen – wir haben das Fachwissen.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <!-- Platzhalter Bild 4 -->
+                <img src="https://images.pexels.com/photos/4417032/pexels-photo-4417032.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gebäudeservice">
+                <div class="service-content">
+                    <h3>Gebäudeservice</h3>
+                    <p>Mehr als nur Reinigung. Wir übernehmen kleinere Instandhaltungsarbeiten, die Grünanlagenpflege und klassische Hausmeisterdienste für eine rundum betreute Immobilie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warum Amiran -->
+    <div class="features-wrapper" id="warum-wir">
+        <div class="section-header">
+            <h2>Warum Amiran Gebäudereinigung?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fa-solid fa-users feature-icon"></i>
+                <h3>Persönlicher Ansprechpartner</h3>
+                <p>Bei uns landen Sie nicht in einem Callcenter. Wir betreuen unsere Kunden persönlich, schnell und lösungsorientiert direkt vor Ort.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-check-circle feature-icon"></i>
+                <h3>Fachpersonal</h3>
+                <p>Unser Team ist nicht nur gründlich, sondern auch diskret, geschult in aktuellen Hygienestandards und arbeitsschutzrechtlich auf dem neuesten Stand.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-leaf feature-icon"></i>
+                <h3>Nachhaltigkeit</h3>
+                <p>Wir setzen gezielt auf umwelt- und materialschonende Reinigungsmittel, die Ihre Oberflächen pflegen und die Natur entlasten.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-clock feature-icon"></i>
+                <h3>Flexibilität</h3>
+                <p>Anpassung an Ihre Betriebszeiten – wir reinigen dann, wenn es Ihren Geschäftsablauf am wenigsten stört. Zuverlässig und pünktlich.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="content-section">
+        <div class="section-header">
+            <h2>Lassen Sie uns über Sauberkeit sprechen.</h2>
+            <p style="margin-top: 1rem;">Jedes Gebäude ist anders. Kontaktieren Sie uns für eine kostenlose Vor-Ort-Besichtigung. Wir erstellen Ihnen ein maßgeschneidertes Reinigungskonzept, das exakt zu Ihren Anforderungen und Ihrem Budget passt.</p>
+        </div>
+        
+        <div class="contact-container">
+            <form method="POST" name="kontaktformular" action="/danke.html" data-netlify="true">
+                <input type="hidden" name="subject" value="Neue Kundenanfrage über Webseite (amiran-gebäudereinigung.de)">
+                <div class="hidden">
+                    <label>Nicht ausfüllen: <input name="bot-field"></label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" name="name" id="name" placeholder="Ihr Name / Firma" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Ihre E-Mail-Adresse" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" rows="5" placeholder="Wie können wir Ihnen helfen?" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%;">Nachricht senden</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Amiran Gebäudereinigung</h3>
+                <p>Wir sind für Sie in Mörfelden-Walldorf und der gesamten Rhein-Main-Region im Einsatz.</p>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@amiran-gebäudereinigung.de">info@amiran-gebäudereinigung.de</a></li>
+                    <!-- Die neue Telefonnummer, direkt anklickbar fürs Handy -->
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:+4917672103493">+49 176 72103493</a></li>
+                    <!-- Die neue Adresse -->
+                    <li><i class="fa-solid fa-location-dot"></i> <span>Rüsselsheimer Str. 26<br>64546 Mörfelden-Walldorf</span></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Rechtliches</h3>
+                <ul>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Der neue TAQNYX Footer-Stempel in Corporate Türkis -->
+        <div class="copyright">
+            &copy; Amiran Gebäudereinigung. Alle Rechte vorbehalten. <br>
+            Powered by <a href="https://taqnyx.de" target="_blank" class="taqnyx-link">TAQNYX</a>
+        </div>
+    </footer>
+
+</body>
+</html>
