@@ -48,8 +48,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 5%;
-            background-color: var(--bg-white);
+            padding: 1rem 5%;
+            background-color: #FFFFFF; /* OPTION 2: Zwingend reines Weiß für den Header */
             border-bottom: 1px solid rgba(55, 65, 81, 0.1);
             position: sticky;
             top: 0;
@@ -57,8 +57,14 @@
         }
 
         .logo img {
-            height: 45px;
+            height: 100px; /* LOGO VERGRÖSSERT */
             display: block;
+            mix-blend-mode: multiply; /* OPTION 1: Weißer Bild-Hintergrund wird unsichtbar */
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05); /* Leichter Zoom-Effekt beim Hovern */
         }
 
         nav ul {
@@ -344,6 +350,7 @@
     <!-- Header -->
     <header>
         <a href="index.html" class="logo">
+            <!-- WICHTIG: Das src Attribut auf logo.jpeg (oder png) anpassen, falls du es nicht schon hast -->
             <img src="logo.svg" alt="Amiran Gebäudereinigung Logo">
         </a>
         <nav>
